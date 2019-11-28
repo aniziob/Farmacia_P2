@@ -1,9 +1,6 @@
 package Repositorio;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import Main.Medicamento;
 import Main.Usuario;
 
 
@@ -15,29 +12,43 @@ import Main.Usuario;
 	    	
 	    }
 	    
-	    public static boolean addUsuario (Usuario usu){  
-	    try{
-	        nomes.add(usu);	       
-	        return true;
-	    }catch (Exception e){
-	        return false;
-	    } 
+	    public static boolean addUsuario (Usuario usu, int aux){  
+	    
+	    if(aux>=18) {
+	    	
+	    		nomes.add(usu);	       
+	    		return true;
+	  
+	    }
+	    else {
+	    	return false;
+	    
+	    }
 	}
 	    
-	    public Usuario buscar(int cpf){
-	        Usuario achei=null;
+	    public static boolean buscar(String cpf){
+	        boolean achei=false;
 	        
-	        for(Usuario u:this.nomes){
+	        for(Usuario u:nomes){
 	            
 	            if(u.getCpf().equals(cpf)){
-	                achei=u;
-	                System.out.println(" Usuario " +u.getNome() + " Encontrado ");
+	                achei=true;
 	            }
-	         
-	          
 	        }
 	        return achei; 
-	    }
+	    } 
+	    public static int buscarAlterar(String cpf){
+	        int achei=0;
+	        for(int i=0;i<RepositorioUsuario.nomes.size();i++) {
+	        	  for(Usuario u:nomes){
+	  	            if(u.getCpf().equals(cpf)){
+	  	                achei=RepositorioUsuario.nomes.size();
+	  	            }
+	        	  }
+	        }
+	        return achei; 
+	   }
+	    
 	    
 	  /*  public Usuario delet(int cpf) {
 	        Usuario delet = null;
@@ -64,10 +75,6 @@ import Main.Usuario;
 	        return false;
 	    }*/
 
-		public static void add(Usuario usu) {
-			// TODO Auto-generated method stub
-			
-		}
 		
 		/*public String toString() {
 			for( Usuario m :nomes) {
