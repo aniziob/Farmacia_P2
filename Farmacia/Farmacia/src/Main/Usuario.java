@@ -1,22 +1,43 @@
 package Main;
 //@author Anizio Barbosa
 public class Usuario {
-	 private  String cpf;	
-	 private  String nome;
-		
-		
-		public Usuario(String cpf, String nome) {
+	 private String cpf;	
+	 private String nome;
+	 private int Idade;
+	 private int index1;
+	 
+		public int getIndex() {
+		return index1;
+	}
+
+
+	public void setIndex(int index) {
+		this.index1 = index;
+	}
+
+
+		public int getIdade() {
+		return Idade;
+	}
+
+
+	public void setIdade(int idade) {
+		Idade = idade;
+	}
+
+
+		public Usuario(String cpf, String nome, int Idade) {
 			this.cpf = cpf;
 			this.nome = nome;
+			this.Idade = Idade;
 
 		}
 		
-		
-		
+	
 		public Usuario() {
 			// TODO Auto-generated constructor stub
 		}
-
+		
 
 
 		public String getCpf() {
@@ -33,6 +54,9 @@ public class Usuario {
 		}
 		
 		public String toString() {
-			return ("Nome: " + this.getNome() + "\n" + "CPF: " + this.getCpf());
+			
+			return ("Nome: " + this.getNome() + "\n" + "CPF: " + this.getCpf() + "\nIdade: " + this.Idade);
+			
 		}
+
 }

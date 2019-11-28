@@ -4,7 +4,7 @@ import Exceptions.MedicamentoNaoExisteException;
 import Repositorio.RepositorioUsuario;
 
 public class ControladorUsuario {
-	
+
 	private static ControladorUsuario instance;
 	private RepositorioUsuario repositorioUsuarios;
 
@@ -17,12 +17,4 @@ public class ControladorUsuario {
 		}
 		return instance;
 	}
-	
-	public void inserirUsuario (Usuario usu) {
-		RepositorioUsuario.addUsuario(usu);
-	}
-	public void removerUsuario (int id) {
-	//	this.repositorioUsuarios.delet(id);
-	}
-
 }
